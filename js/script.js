@@ -18,9 +18,11 @@ Solo letras minusculas
 No se permite acentuación de palabras   
 */
 var texto = document.getElementById("input-texto");
-
+var botonEncriptar=document.querySelector("#btn-encriptar");
+var botondesencriptar=document.querySelector("#btn-desencriptar");
+var botonCopiar=document.querySelector("#btn-copy");
 function encriptar() {
-  var 
+  
   var frase_input1=texto.value;
   var input_encrip=frase_input1.replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
   document.getElementById("msg").value = input_encrip;
@@ -37,3 +39,13 @@ function copiarTexto(){
   msg.select();
   document.execCommand("copy");
 }
+botonEncriptar.addEventListener('click', function(){
+  encriptar();
+});
+botondesencriptar.addEventListener('click', function(){
+  desencriptar();
+});
+botonCopiar.addEventListener('click', function(){
+  copiarTexto();
+});
+
